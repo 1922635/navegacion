@@ -1,5 +1,6 @@
 import { FlatList, Text, View } from "react-native";
-import { peliculas } from "@/data/peliculas.data"
+import { peliculas } from "@/data/peliculas.data";
+import { Link } from "expo-router";
 
 export default function Index() {
   return (
@@ -8,7 +9,7 @@ export default function Index() {
         renderItem={({item}) => {
             return (
                 <View>
-                    <Text>{item.title}</Text>
+                    <Link href={`./peliculas/${item.id}`}>{item.title}</Link>
                 </View>
             );
         }}>
